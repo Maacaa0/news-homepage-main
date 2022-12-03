@@ -126,6 +126,11 @@ h3 {
     margin: 0;
 }
 
+h3:hover {
+    color: var(--Soft-orange);
+    cursor: pointer;
+}
+
 .new_article_text {
     color: var(--Grayish-blue);
     font-size: .9rem;
@@ -162,6 +167,11 @@ h5 {
     font-size: 1.2rem;
     margin-top: 0.3rem;
     letter-spacing: -0.5px;
+}
+
+h5:hover {
+    color: var(--Soft-red);
+    cursor: pointer;
 }
 
 .footer_article_img {
