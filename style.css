@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Verydark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--Off-white);
+
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+    /* margin: 5rem auto; */
+}
+
+main {
+    max-width: 80vw;
+}
+
+p {
+    color: var(--Dark-grayish-blue);
+    font-size: 0.9375em;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    gap: 2.5rem;
+    margin-right: 7.2rem;
+}
+
+li {
+    list-style: none;
+    color: var(--Dark-grayish-blue);
+}
+
+li:hover {
+    color: var(--Soft-orange);
+    cursor: pointer;
+}
+
+.future-of-web {
+    display: grid;
+    grid-template-columns: 1fr 1fr 38%;
+
+    column-gap: 2rem;
+    margin-top: 2.7rem;
+}
+
+picture {
+    grid-column-start: span 2;
+}
+
+.future-of-web_img {
+    width: 100%;
+}
+
+.future-of-web_h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.1px;
+    line-height: 3.65rem;
+    margin: 0;
+    padding-right: .5rem;
+    margin-top: 2rem;
+}
+
+.future-of-web_text {
+    line-height: 1.6rem;
+    margin-top: 1.6rem;
+}
+
+.future-of-web_btn {
+    font-family: inherit;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: var(--Soft-red);
+    color: var(--Off-white);
+    border: none;
+    padding: 1rem 2rem;
+    letter-spacing: 5px;
+    margin-top: 1rem;
+}
+
+.future-of-web_btn:hover {
+    cursor: pointer;
+    background: var(--Verydark-blue);
+}
+
+.new_article {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    background: var(--Verydark-blue);
+    padding: 1.8rem 1.6rem;
+    max-width: 22rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--Soft-orange);
+    margin: 0;
+    margin-bottom: 1.8rem;
+}
+
+h3 {
+    color: var(--Off-white);
+    letter-spacing: 0.9px;
+    margin: 0;
+}
+
+.new_article_text {
+    color: var(--Grayish-blue);
+    font-size: .9rem;
+    letter-spacing: 0.3px;
+    line-height: 1.54rem;
+   
+}
+
+.bottom-line {
+ border-bottom: 1px solid var(--Grayish-blue);
+ margin-bottom: 2rem;
+}
+
+footer {
+    display:flex;
+}
+
+.footer_article {
+    display: flex;
+    margin-top: 4rem;
+    font-weight: 500;
+}
+
+h4, h5 {
+    margin: 0;
+}
+
+h4 {
+    color: var(--Grayish-blue);
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+    margin-top: 0.3rem;
+    letter-spacing: -0.5px;
+}
+
+.footer_article_img {
+    width: 6.3rem;
+}
+
+.footer_text {
+    line-height: 1.7rem;
+    max-width: 16rem;
+}
+
+.container {
+    margin-left: 1.5rem;
+}
+
+.overlay {
+    background: black;
+    opacity: 0;
+    z-index: -10;
+    width: 40vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.display-none {
+    display: none;
+}
+
+.visibility-left {
+    left: 40vw!important;
+    visibility: visible!important;
+    transition: 200ms ease;
+}
+
+.opacity {
+    z-index: 10!important;
+    opacity: .5!important;
+    transition: 150ms ease;
+}
+
+
+@keyframes pulsing {
+    0% {
+        transform: scale(.90);
+    }
+      100% {
+        transform: scale(1.10);
+      }
+}
+
+.menu_btn {
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background: url(images/icon-menu.svg)center no-repeat;
+    cursor: pointer;
+    animation: pulsing 1s infinite alternate;
+    transition: all ease 200ms;
+}
+
+.btn-x-toggle {
+    background: url(images/icon-menu-close.svg) center no-repeat;
+}
+
+@media (max-width: 980px) {
+    .menu {
+        margin-right: 0;
+        position: relative;
+    }
+}
+
+@media (max-width: 850px) {
+    .future-of-web {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .future-of-web_h1 {
+        padding-right: 5rem;
+    }
+
+    .new_article {
+        margin-top: 5rem;
+        max-width: unset;
+    }
+}
+
+@media (max-width:650px) {
+    .menu {
+        visibility: hidden;
+        position: fixed;
+        margin: 0;
+        padding-top: 4rem;
+        background: var(--Off-white);
+        flex-direction: column;
+        width: 60vw;
+        height: 100vh;
+        left: 100%;
+        top: 0;
+    }
+
+
+    .menu_btn {
+        position: absolute;
+        right: 2rem;
+        display: block;
+        z-index: 10;
+    }
+}
