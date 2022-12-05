@@ -44,6 +44,23 @@ header {
     margin-right: 7.2rem;
 }
 
+.mobile_menu {
+        display: none;
+        gap: 2.5rem;
+        margin-right: 7.2rem;
+        position: fixed;
+        margin: 0;
+        padding-top: 4rem;
+        background: var(--Off-white);
+        flex-direction: column;
+        width: 60vw;
+        height: 100vh;
+        left: 100%;
+        top: 0;
+        z-index: 10;
+        transition: 150ms ease;
+}
+
 li {
     list-style: none;
     color: var(--Dark-grayish-blue);
@@ -245,18 +262,11 @@ h5:hover {
 
 @media (max-width:650px) {
     .menu {
-        visibility: hidden;
-        position: fixed;
-        margin: 0;
-        padding-top: 4rem;
-        background: var(--Off-white);
-        flex-direction: column;
-        width: 60vw;
-        height: 100vh;
-        left: 100%;
-        top: 0;
-        z-index: 10;
-        transition: 150ms ease;
+        display: none
+    }
+
+    .mobile_menu {
+        display: flex;
     }
 
 
