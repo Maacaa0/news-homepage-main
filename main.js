@@ -1,16 +1,26 @@
-const btn = document.querySelector(".menu_btn");
+const openMenuBtn = document.querySelector(".menu_btn");
+const closeMenuBtn = document.querySelector(".menu_close_btn");
 const overlay = document.querySelector(".overlay");
 const menu = document.querySelector(".menu");
 const body = document.querySelector("body")
 
-btn.addEventListener("click", function() {
-        overlay.classList.toggle("opacity");
-        menu.classList.toggle("visibility-left");
-        btn.classList.toggle("btn-x-toggle");
+openMenuBtn.addEventListener("click", function() {
+        overlay.style.zIndex = "2";
+        overlay.style.opacity = ".5";
+        menu.style.left = "40vw";
+        menu.style.visibility = "visible";
+})
+
+closeMenuBtn.addEventListener("click", function() {
+        overlay.style.zIndex = "-10";
+        overlay.style.opacity = "0";
+        menu.style.left = "100%";
+        menu.style.visibility = "hidden";
 })
 
 overlay.addEventListener("click", function() {
-    overlay.classList.remove("opacity");
-    menu.classList.remove("visibility-left");
-    btn.classList.remove("btn-x-toggle");
+        overlay.style.zIndex = "-10";
+        overlay.style.opacity = "0";
+        menu.style.left = "100%";
+        menu.style.visibility = "hidden";
 })
