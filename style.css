@@ -22,7 +22,6 @@ body {
     min-height: 100vh;
 
     font-family: "Inter", sans-serif;
-    /* margin: 5rem auto; */
 }
 
 main {
@@ -191,37 +190,11 @@ h5:hover {
     background: black;
     opacity: 0;
     z-index: -10;
-    width: 40vw;
+    width: 100vw;
     height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
-}
-
-.display-none {
-    display: none;
-}
-
-.visibility-left {
-    left: 40vw!important;
-    visibility: visible!important;
-    transition: 200ms ease;
-}
-
-.opacity {
-    z-index: 10!important;
-    opacity: .5!important;
-    transition: 150ms ease;
-}
-
-
-@keyframes pulsing {
-    0% {
-        transform: scale(.90);
-    }
-      100% {
-        transform: scale(1.10);
-      }
 }
 
 .menu_btn {
@@ -232,11 +205,19 @@ h5:hover {
     background: url(images/icon-menu.svg)center no-repeat;
     cursor: pointer;
     animation: pulsing 1s infinite alternate;
-    transition: all ease 200ms;
 }
 
-.btn-x-toggle {
-    background: url(images/icon-menu-close.svg) center no-repeat;
+.menu_close_btn {
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background: url(images/icon-menu-close.svg)center no-repeat;
+    cursor: pointer;
+    animation: pulsing 1s infinite alternate;
 }
 
 @media (max-width: 980px) {
@@ -274,6 +255,8 @@ h5:hover {
         height: 100vh;
         left: 100%;
         top: 0;
+        z-index: 10;
+        transition: 150ms ease;
     }
 
 
@@ -281,6 +264,22 @@ h5:hover {
         position: absolute;
         right: 2rem;
         display: block;
-        z-index: 10;
     }
+
+    .menu_close_btn {
+        display: block;
+    }
+
+    .future-of-web_h1 {
+        font-size: 2.6rem;
+    }
+}
+
+@keyframes pulsing {
+    0% {
+        transform: scale(.90);
+    }
+      100% {
+        transform: scale(1.10);
+      }
 }
